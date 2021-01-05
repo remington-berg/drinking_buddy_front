@@ -1,0 +1,46 @@
+<template>
+  <div class="restaurants-show">
+    <h1> Restaurant </h1>
+      <h2>{{ restaurant.name }}</h2>
+      <p>{{ restaurant.address }}</p>
+      <p>{{ restaurant.phone_number }}</p>
+      <div id="map"></div>
+  </div>
+</template>
+
+<style>
+body { margin: 0; padding: 0; }
+	#map { height: 300px;}
+</style>
+
+<script>
+/* global mapboxgl */
+import axios from "axios";
+export default {
+  mounted: function() {
+    mapboxgl.accessToken = process.env.VUE_APP_MAPBOX_ACCESS_TOKEN;
+
+    var map = new mapboxgl.Map({
+      container: 'map', // container id
+      style: 'mapbox://styles/mapbox/streets-v11', // style URL
+      center: [-87.644370, 41.935360], // starting position [lng, lat]
+      zoom: 15 // starting zoom
+    });
+    var marker = new mapboxgl.Marker()
+      .setLngLat([-87.644370, 41.935360])
+      .addTo(map);
+  },
+  data: function() {
+    return {
+      restaurant: {},
+    };
+  },
+  created: function() {
+    axios.get("api/restaurants/" + this.$route.params.id).then(response => {
+      this.restaurant = response.data;
+      console.log("Data", this.restaurant);
+    });
+  },
+  methods: {}
+};
+</script>
