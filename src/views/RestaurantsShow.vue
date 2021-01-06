@@ -5,7 +5,7 @@
       <p>Address: {{ restaurant.address }}</p>
       <p>Phone: {{ restaurant.phone_number }}</p>
       <div id="map"></div>
-      
+      <button @click="$router.push('/')" class="btn btn-info">Take Me Home!</button>
   </div>
 </template>
 
