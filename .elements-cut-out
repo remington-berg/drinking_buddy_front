@@ -1,31 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- Meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Bootstrap 4 Template">
-    <meta name="author" content="kingstudio.ro">
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.png">
-    <!-- Site Title -->
-    <title>Gallerio - Gellery Shop Template</title>
-    <!-- Bootstrap 4 core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom Styles -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/owl.carousel.min.css" rel="stylesheet">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet">
-</head>
-
-<body>
 
     <div id="preloader">
         <div class="preloader">
@@ -719,117 +691,53 @@
 
     <!-- / modals -->
 
-<!-- Core JavaScript -->
-<script src="js/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- / Core JavaScript -->
 
-<!-- preloader -->
-<script src="js/preloader.js"></script>
-<!-- / preloader -->
 
-<!-- gallery Script -->
-<script src="js/jquery.shuffle.min.js"></script>
-<script src="js/gallery.js"></script>
-<script>
-$(document).ready(function(){
-    if (Modernizr.touch) {
-        // show the close overlay button
-        $(".close-overlay").removeClass("hidden");
-        // handle the adding of hover class when clicked
-        $(".img").click(function(e){
-            if (!$(this).hasClass("hover")) {
-                $(this).addClass("hover");
-            }
-        });
-        // handle the closing of the overlay
-        $(".close-overlay").click(function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            if ($(this).closest(".img").hasClass("hover")) {
-                $(this).closest(".img").removeClass("hover");
-            }
-        });
-    } else {
-        // handle the mouseenter functionality
-        $(".img").mouseenter(function(){
-            $(this).addClass("hover");
-        })
-        // handle the mouseleave functionality
-        .mouseleave(function(){
-            $(this).removeClass("hover");
-        });
-    }
-});
-</script>
-<!-- / gallery Script -->
+--------------------------------------------------------------
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<!-- Owl Carousel -->
-<script src="js/owl.carousel.min.js"></script>
-<script>
-$('#product-slider').owlCarousel({
-    loop:false,
-    margin:10,
-    smartSpeed: 1000,
-    nav:true,
-    dots:true,
-    navText:["<i class='fas fa-long-arrow-alt-left'></i>","<i class='fas fa-long-arrow-alt-right'></i>"],
-    items:1,
-    animateIn: 'fadeIn',
-    animateOut: 'fadeOut'
-})
-</script>
-
-<script>
-$('#product-slider-2').owlCarousel({
-    loop:false,
-    margin:10,
-    smartSpeed: 1000,
-    nav:true,
-    dots:true,
-    navText:["<i class='fas fa-long-arrow-alt-left'></i>","<i class='fas fa-long-arrow-alt-right'></i>"],
-    items:1,
-    animateIn: 'fadeIn',
-    animateOut: 'fadeOut'
-})
-</script>
-
-<script>
-$('#product-slider-3').owlCarousel({
-    loop:false,
-    margin:10,
-    smartSpeed: 1000,
-    nav:true,
-    dots:true,
-    navText:["<i class='fas fa-long-arrow-alt-left'></i>","<i class='fas fa-long-arrow-alt-right'></i>"],
-    items:1,
-    animateIn: 'fadeIn',
-    animateOut: 'fadeOut'
-})
-</script>
-
-<script>
-$('#clients-carousel').owlCarousel({
-    loop:true,
-    margin:100,
-    dots: false,
-    autoplay:false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:4
-        }
-    }
-})
-</script>
-<!-- / Owl Carousel -->
-
-</body>
-
-</html>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/restaurants">Restaurants</a>
+      </li>
+      <div v-if="isLoggedIn()">
+      <li class="nav-item">
+        <a class="nav-link" href="/restaurants/new">New Restaurants</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/specials/new">New Special</a>
+      </li>
+      </div>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          User
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <div v-if="!isLoggedIn()">
+            <a class="dropdown-item" href="/signup">Sign Up</a>
+            <a class="dropdown-item" href="/login">Log In</a>
+          </div>
+          <div class="dropdown-divider"></div>
+            <div v-if="isLoggedIn()">
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+        </div>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li> -->
+    </ul>
+    <!-- <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    <!-- </form> -->
+  </div>
+</nav>
