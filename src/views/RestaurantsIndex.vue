@@ -7,7 +7,7 @@
     <h2 class="card-title">{{restaurant.name}}</h2>
     <h3 class="card-subtitle mb-2 text-muted">{{restaurant.address}}</h3>
     <h4 class="card-text">{{restaurant.phone_number}}</h4>
-    
+    <button @click="$router.push('/')" class="btn btn-info">Take Me Home!</button>
   </div>
 </div>
     </div>
