@@ -741,3 +741,55 @@
     <!-- </form> -->
   </div>
 </nav>
+
+===========================================
+Old filter buttons 
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+  
+
+    <button v-on:click="dayFilter='Monday'" class="btn btn-primary" ><input type="radio" name="options" id="option3" autocomplete="off">Monday</button>
+    <button v-on:click="dayFilter='Tuesday'" class="btn btn-primary"><input type="radio" name="options" id="option3" autocomplete="off">Tuesday</button>
+    <button v-on:click="dayFilter='Wednesday'" class="btn btn-primary"><input type="radio" name="options" id="option3" autocomplete="off">Wednesday</button>
+    <button v-on:click="dayFilter='Thursday'" class="btn btn-primary"><input type="radio" name="options" id="option3" autocomplete="off">Thursday</button>
+    <button v-on:click="dayFilter='Friday'" class="btn btn-primary"><input type="radio" name="options" id="option3" autocomplete="off">Friday</button>
+    <button v-on:click="dayFilter='Saturday'" class="btn btn-primary"><input type="radio" name="options" id="option3" autocomplete="off">Saturday</button>
+    <button v-on:click="dayFilter='Sunday'" class="btn btn-primary"><input type="radio" name="options" id="option3" autocomplete="off">Sunday</button>
+    <button v-on:click="dayFilter=''" class="btn btn-primary"><input type="radio" name="options" id="option3" autocomplete="off">Clear Filter</button>
+</div>
+
+
+
+
+    <div v-for="special in filterBy(specials, dayFilter, 'day')">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{special.name}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{special.day}}</h6>
+                <p class="card-text">{{special.description}}</p>
+                <button @click="$router.push({name: 'Restaurants-show', params: {id:special.restaurant_id },})" class="btn btn-info">Where can I find this?!!?</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- gallery -->
+                <li class="col-md-6 col-lg-4 gallery tall-gallery" data-groups='["photography", "print"]'>
+                    <figure class="gallery-item effect-bubba">
+                        <img src="images/mgallery2.jpg" alt="">
+                        <figcaption>
+                            <div class="hover-content">
+                                <h2 class="hover-title text-center text-white">{{special.name}}</h2><!-- / hover-title -->
+                                <p class="gallery-info text-center text-white">Print - From $14.99
+                                    <span class="gallery-icons">
+                                        <a href="#x" class="gallery-button" data-toggle="modal" data-target=".print-product"><i class="fas fa-plus"></i></a>
+                                        <a href="shopping-cart.html" class="gallery-button"><i class="fas fa-shopping-cart"></i></a>
+                                    </span><!--/ gallery-icons -->
+                                </p><!-- / gallery-info -->
+                            </div><!-- / hover-content -->
+                        </figcaption>
+                    </figure><!-- / gallery-item -->
+                </li><!-- / gallery -->
