@@ -17,6 +17,10 @@
         <label>Phone:</label>
         <input type="text" class="form-control" v-model="phone_number">
       </div>
+      <div class="form-group">
+        <label>Image URL:</label>
+        <input type="text" class="form-control" v-model="image_url">
+      </div>
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>
   </div>
@@ -31,6 +35,7 @@ export default {
       name: "",
       address: "",
       phone_number: "",
+      image_url: "",
       errors: [],
       status: "",
     };
@@ -42,6 +47,7 @@ export default {
         name: this.name,
         address: this.address,
         phone_number: this.phone_number,
+        image_url: this.image_url
       };
       axios
         .post("/api/restaurants", params)

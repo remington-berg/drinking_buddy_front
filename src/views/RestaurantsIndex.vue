@@ -4,7 +4,7 @@
     <div v-for="restaurant in restaurants">
       <div class="col-sm-12 col-md-4">
         <div class="card">
-        <img class="card-img-top" src="images/card-image2.jpg" alt="card-image-cap">
+        <img class="card-img-top" v-bind:src="`${restaurant.image_url}`" alt="">
           <div class="card-body text-center">
             <h4 class="card-title">{{restaurant.name}}</h4>
             <p class="card-text">{{restaurant.address}}
@@ -14,16 +14,6 @@
           </div><!-- / card-body -->
         </div><!-- / card -->
       </div><!-- / column -->
-
-
-      <!-- <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h2 class="card-title">{{restaurant.name}}</h2>
-    <h3 class="card-subtitle mb-2 text-muted">{{restaurant.address}}</h3>
-    <h4 class="card-text">{{restaurant.phone_number}}</h4>
-    <button @click="$router.push('/')" class="btn btn-info">Take Me Home!</button>
-  </div>
-</div> -->
     </div>
   </div>
   

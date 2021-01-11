@@ -1,12 +1,30 @@
 <template>
-  <div class="restaurants-show">
+
+ <div class="restaurant-show">
+    <h1>{{restaurant.name}}</h1>
+      <div class="col-sm-12 col-md-4">
+        <div class="card">
+        <img class="card-img-top" v-bind:src="`${restaurant.image_url}`" alt="">
+          <div class="card-body text-center">
+            <!-- <h4 class="card-title">{{restaurant.name}}</h4> -->
+            <p class="card-text">{{restaurant.address}}
+              {{restaurant.phone_number}}
+            </p>
+            <a href="/" class="btn btn-primary pill">Take Me Home</a>
+          </div><!-- / card-body -->
+        </div><!-- / card -->
+      </div><!-- / column -->
+    <div id="map"></div>
+  </div>
+  
+  <!-- <div class="restaurants-show">
     <h1> Restaurant </h1>
       <h2>{{ restaurant.name }}</h2>
       <p>Address: {{ restaurant.address }}</p>
       <p>Phone: {{ restaurant.phone_number }}</p>
       <div id="map"></div>
       <button @click="$router.push('/')" class="btn btn-info">Take Me Home!</button>
-  </div>
+  </div> -->
 </template>
 
 <style>

@@ -24,19 +24,18 @@
                 <li><a href="#" @click='dayFilter="Saturday"'>Saturday</a></li>
                 <li><a href="#" @click='dayFilter="Sunday"'>Sunday</a></li>
             </ul>
-            
-        <div v-for="special in filterBy(specials, dayFilter, 'day')">
+        </div>
             <!-- / gallery filter -->
             <!-- / container -->
-                        <h1>{{special.name}}</h1>
-            <div class="container full-width">
+            <div v-for="special in filterBy(specials, dayFilter, 'day')" class="card">
                 <h3 class="section-title hidden">GALLERY</h3>
-                <ul class="row gallery line-effect list-unstyled mb-0" >
+                <ul class="row gallery line-effect list-unstyled mb-0 shuffle">
                 <!-- gallery -->
                     
-                <li class="col-md-6 col-lg-4 gallery" data-groups='["framed"]'>
+                <li class="col-md-6 col-lg-4 gallery shuffle-item">
                     <figure class="gallery-item effect-bubba">
-                        <img src="images/gallery1.jpg" alt="">
+                        <h1>{{special.name}}</h1>
+                        <img v-bind:src="`${special.image_url}`" alt="">
                         <figcaption>
                             <div class="hover-content">
                                 <h2 class="hover-title text-center text-white">{{special.day}}</h2><!-- / hover-title -->
@@ -47,13 +46,14 @@
                                 </p><!-- / gallery-info -->
                             </div><!-- / hover-content -->
                         </figcaption>
-                    </figure><!-- / gallery-item -->
-                </li><!-- / gallery -->
+                     </figure><!-- / gallery-item -->
+                    </li><!-- / gallery -->
                 </ul>
-                <!-- / gallery -->
-            </div><!-- / container -->
-        </div>
-    </div>
+            </div>
+                    <!-- / gallery -->
+                <!-- / container -->
+        
+        <!-- </div> -->
     </section>
     <!-- / gallery -->
 </div>

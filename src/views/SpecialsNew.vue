@@ -21,6 +21,10 @@
         <label>Restaurant ID:</label>
         <input type="text" class="form-control" v-model="restaurant_id">
       </div>
+      <div class="form-group">
+        <label>Image URL:</label>
+        <input type="text" class="form-control" v-model="image_url">
+      </div>
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>
   </div>
@@ -36,6 +40,7 @@ export default {
       description: "",
       day: "",
       restaurant_id: "",
+      image_url: "",
       errors: [],
       status: "",
     };
@@ -47,7 +52,8 @@ export default {
         name: this.name,
         description: this.description,
         day: this.day,
-        restaurant_id: this.restaurant_id
+        restaurant_id: this.restaurant_id,
+        image_url: this.image_url
       };
       axios
         .post("/api/specials", params)
