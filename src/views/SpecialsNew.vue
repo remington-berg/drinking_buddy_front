@@ -1,6 +1,6 @@
 <template>
   <div class="specials-new">
-      <h1>Create New Special</h1>
+      <h1 class="restaurant-name">Create New Special</h1>
     <form v-on:submit.prevent="createSpecial()">
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>

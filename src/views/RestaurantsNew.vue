@@ -1,6 +1,6 @@
 <template>
   <div class="restaurants-new">
-      <h1>Create New Restaurnat</h1>
+      <h1 class="restaurant-name">Create New Restaurnat</h1>
     <form v-on:submit.prevent="createRestaurant()">
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>

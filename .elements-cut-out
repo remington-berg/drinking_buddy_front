@@ -793,3 +793,30 @@ Old filter buttons
                         </figcaption>
                     </figure><!-- / gallery-item -->
                 </li><!-- / gallery -->
+
+
+
+
+
+
+                <h3 class="section-title hidden">GALLERY</h3>
+                <ul class="row gallery line-effect list-unstyled mb-0 shuffle">
+                <!-- gallery -->
+                    
+                <li class="col-md-6 col-lg-4 gallery shuffle-item">
+                    <figure class="gallery-item effect-bubba">
+                        <h1>{{special.name}}</h1>
+                        <img v-bind:src="`${special.image_url}`" alt="">
+                        <figcaption>
+                            <div class="hover-content">
+                                <h2 class="hover-title text-center text-white">{{special.day}}</h2><!-- / hover-title -->
+                                <p class="gallery-info text-center text-white">{{special.description}}
+                                    <span class="gallery-icons">
+                                        <button @click="$router.push({name: 'Restaurants-show', params: {id:special.restaurant_id },})" class="gallery-button">Where can I find this?!!?</button>
+                                    </span><!--/ gallery-icons -->
+                                </p><!-- / gallery-info -->
+                            </div><!-- / hover-content -->
+                        </figcaption>
+                     </figure><!-- / gallery-item -->
+                    </li><!-- / gallery -->
+                </ul>

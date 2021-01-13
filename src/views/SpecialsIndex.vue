@@ -1,7 +1,7 @@
 <template>
 <div>
     <div class="container">
-        <h1>Drinking Buddy</h1>
+        <h1 class="restaurant-name">Drinking Buddy</h1>
         <header class="home-header parallax">
             <div class="header-content dark text-center">
                 <h1 class="header-title mb-0"></h1>
@@ -12,7 +12,7 @@
 
     <section id="gallery" class="p-0 line-effect">
         <div class="container">
-            <h2>So tell me, when we drinking?</h2>
+            <h2 class="restaurant-name">So tell me, when we drinking?</h2>
             <!-- gallery filter -->
             <ul class="gallery-filter list-inline text-center">
                 <li><a href="#" @click='dayFilter=""'>SEE ALL</a></li>
@@ -27,27 +27,32 @@
         </div>
             <!-- / gallery filter -->
             <!-- / container -->
-            <div v-for="special in filterBy(specials, dayFilter, 'day')" class="card">
+            <div v-for="special in filterBy(specials, dayFilter, 'day')">
                 <h3 class="section-title hidden">GALLERY</h3>
-                <ul class="row gallery line-effect list-unstyled mb-0 shuffle">
+                <ul class="col gallery line-effect tester ">
                 <!-- gallery -->
                     
-                <li class="col-md-6 col-lg-4 gallery shuffle-item">
+                <li class="col gallery ">
                     <figure class="gallery-item effect-bubba">
-                        <h1>{{special.name}}</h1>
+                        <h1 class="special-name">{{special.name}}</h1>
                         <img v-bind:src="`${special.image_url}`" alt="">
                         <figcaption>
                             <div class="hover-content">
+                                <br><br>
                                 <h2 class="hover-title text-center text-white">{{special.day}}</h2><!-- / hover-title -->
                                 <p class="gallery-info text-center text-white">{{special.description}}
                                     <span class="gallery-icons">
-                                        <button @click="$router.push({name: 'Restaurants-show', params: {id:special.restaurant_id },})" class="gallery-button">Where can I find this?!!?</button>
+                                        <button @click="$router.push({name: 'Restaurants-show', params: {id:special.restaurant_id },})" class="my-button">Where can I find this?!!?</button>
                                     </span><!--/ gallery-icons -->
                                 </p><!-- / gallery-info -->
                             </div><!-- / hover-content -->
                         </figcaption>
                      </figure><!-- / gallery-item -->
                     </li><!-- / gallery -->
+
+                    
+
+
                 </ul>
             </div>
                     <!-- / gallery -->

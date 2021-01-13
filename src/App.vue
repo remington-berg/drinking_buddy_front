@@ -18,6 +18,8 @@
                     <!-- <a href="#"><i class="fab fa-pinterest"></i></a> -->
                     Get To Know Me
                 </span>
+                
+
                 <span class="right">
                     <a v-if='!isLoggedIn()' href="/login" ><i class="fas fa-user mr-1"></i> <span>Login</span></a>
                     <a v-if='!isLoggedIn()' href="/signup" ><i class="fas fa-lock mr-1"></i> <span>Register</span></a>
@@ -36,7 +38,8 @@
                 <span class="sr-only">Toggle navigation</span>
             </button><!-- / navbar-toggler -->
 
-            <a class="navbar-brand mobile-brand m-auto" href="/"><img src="images/logo-icon.png" alt=""></a>
+            <a class="navbar-brand mobile-brand m-auto" href="/"><img src="https://img.icons8.com/plasticine/100/000000/beer.png" alt=""></a>
+
 
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle-2" aria-controls="navbar-toggle-2" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar top-bar"></span>
@@ -53,21 +56,11 @@
                     <li class="nav-item after-dropdown">
                         <a class="nav-link" href="/restaurants">Restaurants</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#x" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-                        <div class="dropdown-menu drop-to-right animated fadeIn fast" aria-labelledby="dropdown2">
-                            <a class="dropdown-item" href="#x">Framed</a>
-                            <a class="dropdown-item" href="#x">Print</a>
-                            <a class="dropdown-item" href="#x">Digital</a>
-                            <a class="dropdown-item" href="#x">Photography</a> -->
-                        <!-- </div>/ dropdown-menu -->
-                    <!-- </li>/ dropdown -->
                 </ul><!-- / navbar-nav -->
+                
             </div><!-- / navbar-collapse -->
 
-            <a class="navbar-brand m-auto" href="/"><img src="images/logo-icon.png" alt=""></a>
-
-            <div class="collapse navbar-collapse" id="navbar-toggle-2">
+            <div  class="collapse navbar-collapse" id="navbar-toggle-2">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a v-if='!isLoggedIn()'>You Don't have Access</a>
