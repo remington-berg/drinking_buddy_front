@@ -5,27 +5,27 @@
       <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
-      <div class="form-group">
+      <div class="form-group register-titles">
         <label>Name:</label> 
         <input type="text" class="form-control" v-model="name">
       </div>
-      <div class="form-group">
+      <div class="form-group register-titles">
         <label>Description:</label>
         <input type="text" class="form-control" v-model="description">
       </div>
-      <div class="form-group">
+      <div class="form-group register-titles">
         <label>Day:</label>
         <input type="text" class="form-control" v-model="day">
       </div>
-      <div class="form-group">
+      <div class="form-group register-titles">
         <label>Restaurant ID:</label>
         <input type="text" class="form-control" v-model="restaurant_id">
       </div>
-      <div class="form-group">
+      <div class="form-group register-titles">
         <label>Image URL:</label>
         <input type="text" class="form-control" v-model="image_url">
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-info" value="Submit">
     </form>
   </div>
 </template>

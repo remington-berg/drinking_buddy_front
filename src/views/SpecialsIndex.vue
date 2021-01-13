@@ -14,7 +14,7 @@
         <div class="container">
             <h2 class="restaurant-name">So tell me, when we drinking?</h2>
             <!-- gallery filter -->
-            <ul class="gallery-filter list-inline text-center">
+            <ul class="gallery-filter list-inline text-center yellowback">
                 <li><a href="#" @click='dayFilter=""'>SEE ALL</a></li>
                 <li><a href="#" @click='dayFilter="Monday"'>Monday</a></li>
                 <li><a href="#" @click='dayFilter="Tuesday"'>Tuesday</a></li>
@@ -27,18 +27,20 @@
         </div>
             <!-- / gallery filter -->
             <!-- / container -->
-            <div v-for="special in filterBy(specials, dayFilter, 'day')">
-                <h3 class="section-title hidden">GALLERY</h3>
-                <ul class="col gallery line-effect tester ">
+        <div class="container full-width">
+            <div class="row">
+                <div class="col-md-6" v-for="special in filterBy(specials, dayFilter, 'day')">
+                    <h3 class="section-title hidden">GALLERY</h3>
+                    <ul class="row gallery line-effect list-unstyled " id="grid">
                 <!-- gallery -->
                     
-                <li class="col gallery ">
-                    <figure class="gallery-item effect-bubba">
-                        <h1 class="special-name">{{special.name}}</h1>
-                        <img v-bind:src="`${special.image_url}`" alt="">
-                        <figcaption>
+                        <li class="col-md gallery ">
+                            <figure class="gallery-item effect-bubba">
+                            <h1 class="special-name">{{special.name}}</h1>
+                            <img v-bind:src="`${special.image_url}`" alt="">
+                            <figcaption>
                             <div class="hover-content">
-                                <br><br>
+                                
                                 <h2 class="hover-title text-center text-white">{{special.day}}</h2><!-- / hover-title -->
                                 <p class="gallery-info text-center text-white">{{special.description}}
                                     <span class="gallery-icons">
@@ -46,18 +48,13 @@
                                     </span><!--/ gallery-icons -->
                                 </p><!-- / gallery-info -->
                             </div><!-- / hover-content -->
-                        </figcaption>
-                     </figure><!-- / gallery-item -->
-                    </li><!-- / gallery -->
-
-                    
-
-
-                </ul>
-            </div>
-                    <!-- / gallery -->
-                <!-- / container -->
-        
+                            </figcaption>
+                        </figure><!-- / gallery-item -->
+                        </li><!-- / gallery -->
+                    </ul>
+                </div><!-- / gallery -->
+            </div><!-- / container -->
+        </div>
         <!-- </div> -->
     </section>
     <!-- / gallery -->

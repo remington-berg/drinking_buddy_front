@@ -29,7 +29,7 @@
         </div><!-- / container -->
     </div><!-- / top-menu -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white custom-menu split-menu">
+    <nav class="navbar navbar-expand-lg navbar-light  custom-menu split-menu fullyellow">
         <div class="container">
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle-1" aria-controls="navbar-toggle-1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar top-bar"></span>
@@ -39,8 +39,8 @@
             </button><!-- / navbar-toggler -->
 
             <a class="navbar-brand mobile-brand m-auto" href="/"><img src="https://img.icons8.com/plasticine/100/000000/beer.png" alt=""></a>
-
-
+            
+            
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-toggle-2" aria-controls="navbar-toggle-2" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="icon-bar top-bar"></span>
                 <span class="icon-bar middle-bar"></span>
@@ -77,7 +77,7 @@
  
     
     <router-view/>
-    <footer class="bg-white">
+    <footer class="fullyellow">
         <div class="container-fluid text-center">
             <p>© 2018 <b>Gallerio</b> by <a href="https://kingstudio.ro" target="_blank">KingStudio</a>. All Rights Reserved.</p>
         </div><!-- / container-fluid -->

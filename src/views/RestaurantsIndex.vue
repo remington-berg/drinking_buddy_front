@@ -4,20 +4,21 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6" v-for="restaurant in restaurants">
-        <div class="card">
+        <div class="card yellowback">
         <img class="card-img-top" v-bind:src="`${restaurant.image_url}`" alt="">
           <div class="card-body text-center">
-            <h4 class="card-title">{{restaurant.name}}</h4>
-            <p class="card-text">{{restaurant.address}}
+            <h4 class="card-title card-specials">{{restaurant.name}}</h4>
+            <p class="card-text card-specials">{{restaurant.address}}
             </p>
-            <a href="/" class="btn btn-primary pill">Take Me Home</a>
             <button @click="$router.push({name: 'Restaurants-show', params: {id:restaurant.id },})" class="btn btn-info pill">Tell Me More!</button>
+            <a href="/" class="btn btn-danger pill">Take Me Home</a>
           </div><!-- / card-body -->
         </div><!-- / card -->
       </div><!-- / column -->
     </div>
     </div>
   </div>
+  
   
 </template>
 

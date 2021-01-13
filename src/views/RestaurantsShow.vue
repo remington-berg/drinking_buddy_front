@@ -3,7 +3,7 @@
  <div class="restaurant-show">
       <div class="container">
     <h1 class="restaurant-name">{{restaurant.name}}</h1>
-        <div class="card">
+        <div class="card yellowback">
         <img class="card-img-top" v-bind:src="`${restaurant.image_url}`" alt="">
         <br>
     <div id="map"></div>
@@ -11,17 +11,16 @@
             <!-- <h4 class="card-title">{{restaurant.name}}</h4> -->
             <div v-for="special in specials">
               <div v-if="special.restaurant_id === restaurant.id">
-                <h4>{{special.day}}</h4>
-                {{special.description}}
+                <h4 class="card-specials">{{special.day}}</h4>
+                <p class="card-specials">{{special.description}}</p>
                 </div>
               </div>
             <p class="card-text">
-              <h5>Address</h5>
-              {{restaurant.address}}
-              <h5>Phone</h5>
-              {{restaurant.phone_number}}
-            </p>
-            <a href="/" class="btn btn-primary pill ">Take Me Home</a>
+              <h5 class="card-specials">Address</h5>
+              <p class="card-specials">{{restaurant.address}}</p>
+              <h5 class="card-specials">Phone</h5>
+              <p class="card-specials">{{restaurant.phone_number}}</p>
+            <a href="/" class="btn btn-danger pill ">Take Me Home</a>
           </div><!-- / card-body -->
         </div><!-- / card -->
       </div><!-- / column -->
