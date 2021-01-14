@@ -24,6 +24,7 @@
                 <li><a href="#" @click='dayFilter="Saturday"'>Saturday</a></li>
                 <li><a href="#" @click='dayFilter="Sunday"'>Sunday</a></li>
             </ul>
+            
         </div>
             <!-- / gallery filter -->
             <!-- / container -->

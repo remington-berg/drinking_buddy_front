@@ -3,7 +3,15 @@
       <h1 class="restaurant-name">Create New Special</h1>
     <form v-on:submit.prevent="createSpecial()">
       <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        
+        <li class="text-danger yellowback register-titles" v-for="error in errors">
+           <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <i class="md-icon dp18 alert-icon mr-3">error</i><strong>Oh snap! </strong>{{ error}}
+                    </div><!-- / alert -->
+          </li>
       </ul>
       <div class="form-group register-titles">
         <label>Name:</label> 
@@ -19,6 +27,20 @@
       </div>
       <div class="form-group register-titles">
         <label>Restaurant ID:</label>
+
+
+        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Restaurant ID Cheat Sheet
+  </button>
+  <div class="collapse" id="collapseExample">
+  <div class="card card-body yellowback">
+    <div class="card-specials" v-for="restaurant in restaurants">
+    <h4>{{restaurant.name}} - {{restaurant.id}}</h4>
+    </div>
+  </div>
+</div>
+
+
         <input type="text" class="form-control" v-model="restaurant_id">
       </div>
       <div class="form-group register-titles">
@@ -27,7 +49,9 @@
       </div>
       <input type="submit" class="btn btn-info" value="Submit">
     </form>
+    
   </div>
+  
 </template>
 
 <script>
@@ -43,10 +67,19 @@ export default {
       image_url: "",
       errors: [],
       status: "",
+      restaurants: [],
     };
   },
-  created: function() {},
+  created: function() {
+    this.indexRestaurants();
+  },
   methods: {
+    indexRestaurants: function() {
+      axios.get("api/restaurants").then(response => {
+        this.restaurants = response.data;
+        console.log(this.restaurants);
+      });
+    },
     createSpecial: function() {
       var params = {
         name: this.name,
@@ -55,6 +88,7 @@ export default {
         restaurant_id: this.restaurant_id,
         image_url: this.image_url
       };
+      
       axios
         .post("/api/specials", params)
         .then(response => {

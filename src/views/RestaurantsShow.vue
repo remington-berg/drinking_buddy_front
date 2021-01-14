@@ -16,11 +16,12 @@
                 </div>
               </div>
             <p class="card-text">
-              <h5 class="card-specials">Address</h5>
+              <h5 class="card-specials">Address:</h5>
               <p class="card-specials">{{restaurant.address}}</p>
-              <h5 class="card-specials">Phone</h5>
+              <h5 class="card-specials">Phone:</h5>
               <p class="card-specials">{{restaurant.phone_number}}</p>
             <a href="/" class="btn btn-danger pill ">Take Me Home</a>
+            <a href="/restaurants" class="btn btn-info pill">All Restaurants</a>
           </div><!-- / card-body -->
         </div><!-- / card -->
       </div><!-- / column -->

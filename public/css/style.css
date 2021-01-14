@@ -5369,13 +5369,13 @@ table > tr > td {
 /*------- end of template styles -------*/
 /*------- media screens -------*/
 /*--- max-widths ---*/
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 11200px) {
   .navbar-expand-lg .form-inline {
     display: block;
     margin: 0.5rem auto;
   }
 }
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 11024px) {
   .parallax {
     background-attachment: scroll !important;
   }
