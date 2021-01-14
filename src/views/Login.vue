@@ -3,7 +3,14 @@
     <form v-on:submit.prevent="submit()">
       <h1 class="restaurant-name">Login</h1>
       <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        <li class="text-danger yellowback register-titles" v-for="error in errors">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <i class="md-icon dp18 alert-icon mr-3">error</i><strong>Oh snap! </strong>{{ error}}
+                    </div>
+        </li>
       </ul>
       <div class="form-group register-titles">
         <label>Username:</label>
